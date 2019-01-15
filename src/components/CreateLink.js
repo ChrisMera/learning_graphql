@@ -1,5 +1,16 @@
 import React, { Component } from 'react';
 
+const POST_MUTATION = gql`
+  mutation PostMutation($description: String!, $url: String!) {
+    post(description: $description, url: $url) {
+      id
+      createdAt
+      url
+      description
+    }
+  }
+`
+
 class CreateLink extends Component {
   state = {
     description: '',
@@ -26,7 +37,13 @@ class CreateLink extends Component {
             placeholder='Enter url for the linke'
           />
         </div>
-        <button onClick={`waiting to implement`}>Submit</button>
+        <Mutation mutation={POST_MUTATION} variables={{ description, url }}>
+          {() => (
+            <button onClick={`waiting to implement`}>
+              Submit
+            </button>
+          )}
+        </Mutation>
       </>
     )
   }
