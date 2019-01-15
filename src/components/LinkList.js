@@ -1,5 +1,5 @@
-import React, { Component } from 'react'
-import Link from './Link'
+import React, { Component } from 'react';
+import Link from './Link';
 
 class LinkList extends Component {
   render() {
@@ -22,4 +22,4 @@ class LinkList extends Component {
   }
 }
 
-export default LinkList
+export default LinkList;
